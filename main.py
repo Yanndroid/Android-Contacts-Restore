@@ -29,7 +29,7 @@ class EventInfo:
 
     def __init__(self, data):
         self.event_date = data["data1"]
-        self.event_type = data["data2"]
+        self.event_type = int(data["data2"])
         self.event_label = data["data3"] if data["data3"] else ""
 
     def __str__(self):
@@ -47,7 +47,7 @@ class EmailInfo:
 
     def __init__(self, data):
         self.email = data["data1"]
-        self.email_type = data["data2"]
+        self.email_type = int(data["data2"])
         self.email_label = data["data3"] if data["data3"] else ""
 
     def type_name(self):
@@ -74,7 +74,7 @@ class PhoneInfo:
 
     def __init__(self, data):
         self.phone_number = data["data1"].replace(" ", "")
-        self.phone_type = data["data2"]
+        self.phone_type = int(data["data2"])
         self.phone_label = data["data3"] if data["data3"] else ""
 
     def type_name(self):
@@ -101,7 +101,7 @@ class AddressInfo:
 
     def __init__(self, data):
         self.address_full = data["data1"] if data["data1"] else ""
-        self.address_type = data["data2"]
+        self.address_type = int(data["data2"])
         self.address_label = data["data3"] if data["data3"] else ""
         self.street = data["data4"] if data["data4"] else ""
         self.city = data["data7"] if data["data7"] else ""
